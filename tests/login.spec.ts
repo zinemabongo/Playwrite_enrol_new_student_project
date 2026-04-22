@@ -1,0 +1,13 @@
+import { test, expect } from '../src/fixtures/customFixtures';
+import {validUsers} from '../src/data/testData';
+import { getLoginById, closePool } from '../src/data/dbLogin';
+
+test.describe('Login to Ndosi Website', () => {
+    test('should login with valid credentials', async ({ loginPage }) => {
+        await loginPage.goto();
+        await loginPage.clickLoginButton();
+        await loginPage.emailInput.fill(validUsers.admin.email);
+    
+
+    })
+})
