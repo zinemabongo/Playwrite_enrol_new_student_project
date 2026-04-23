@@ -14,6 +14,4 @@ export const validUsers: Record<string, UserCredential> = {
     password: 'Mabongo@1'
   },
 
-  student: {
-    email: 'zine.mabongo@gmail.com',
 };
