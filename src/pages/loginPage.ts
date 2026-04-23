@@ -1,18 +1,16 @@
-import {Page,Locator, expect} from '@playwright/test';
+import {Page,Locator} from '@playwright/test';
 import {BasePage} from './basePage';
 import {validUsers} from '../data/testData';
 
 export class LoginPage extends BasePage {
     private readonly pageUrl = 'https://ndosisimplifiedautomation.vercel.app/';
     
+
+    // get = Locators
     get navigateToLoginPage(): Locator {
         return this.page.getByRole('button',{ name: 'Login' });
     }
-
-    get loginButton(): Locator {
-        return this.page.getByRole('button',{ name: 'Login' });
-    }
-
+    
     get emailInput(): Locator {
         return this.page.getByPlaceholder('Email');
     }
@@ -21,6 +19,11 @@ export class LoginPage extends BasePage {
         return this.page.getByPlaceholder('Password');
     }
 
+    get loginButton(): Locator {
+        return this.page.getByRole('button',{ name: 'Login' });
+    }
+
+    // async = methods
      async goto(){
         await this.navigateTo(this.pageUrl);
     }
