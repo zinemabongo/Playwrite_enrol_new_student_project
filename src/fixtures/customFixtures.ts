@@ -2,7 +2,7 @@ import {test as base} from '@playwright/test';
 import {LoginPage} from '../pages/loginPage';
 import {HomePage} from '../pages/homePage';
 import {AdminPage} from '../pages/adminPage';
-import {EnrolmentsPage} from '../pages/enrolmentsPage';
+import { EnrolmentsPage } from '../pages/enrolmentsPage';
 
 
 type CustomFixtures = {

@@ -8,3 +8,4 @@ test.describe('Admin Page Tests', () => {
         await adminPage.selectAdminPanelButton();
         await expect(adminPage.verifyAdminDashboard).toBeVisible();
     });
+})
