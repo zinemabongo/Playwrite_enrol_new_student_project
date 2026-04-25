@@ -152,3 +152,4 @@ test("delete enrolment and validate",async ({page}) =>{
     await page.waitForTimeout(2000)
     //await expect(page.getByText('API Testing with Postman – Getting Started')).not.toBeVisible()
 })
+})

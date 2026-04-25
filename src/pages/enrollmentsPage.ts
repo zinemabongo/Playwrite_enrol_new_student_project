@@ -2,14 +2,14 @@ import {Page,Locator} from '@playwright/test';
 import {BasePage} from './basePage';
 import { get } from 'node:http';
 
-export class EnrolmentsPage extends BasePage {
+export class EnrollmentsPage extends BasePage {
     //3. Navigate to enrolments page
     // get = Locators
     get clickEnrollmentTab() {
         return this.page.getByRole('button',{ name: 'Enrollment' });
     }
 
-    get verifyEnrolmentsPage() {
+    get verifyEnrollmentsPage() {
         return this.page.locator("text=Enrollment Management")
     }
 
@@ -45,16 +45,13 @@ export class EnrolmentsPage extends BasePage {
     }   
         
     // async = methods
-     async goto(){
-        await this.navigateTo('https://ndosisimplifiedautomation.vercel.app/#/admin/enrollments');
-    }
 
     async clickEnrollmentTabButton() {
         await this.clickElement(this.clickEnrollmentTab);
     }
 
-    async verifyEnrolmentsPageIsVisible() {
-        await this.clickElement(this.verifyEnrolmentsPage);
+    async verifyEnrollmentsPageIsVisible() {
+        await this.clickElement(this.verifyEnrollmentsPage);
     }
 
     async clickEnrollUserButtonMethod() {

@@ -1,13 +1,13 @@
 import { test, expect } from '../src/fixtures/customFixtures';
 import {validUsers} from '../src/data/testData';
-import { getLoginById, closePool } from '../src/data/dbLogin';
+// import { getLoginById, closePool } from '../src/data/dbLogin';
 
 test.describe('Login to Ndosi Website', () => {
     test('should succssfully login with valid credentials', async ({ loginPage,homePage }) => {
         await loginPage.goto();
         await loginPage.clickLoginButton();
-        await loginPage.emailInput.fill(validUsers.admin.email);
-        await loginPage.passwordInput.fill(validUsers.admin.password);
+        await loginPage.emailInput.fill(validUsers.adminUser.email);
+        await loginPage.passwordInput.fill(validUsers.adminUser.password);
         await loginPage.loginButton.click();
         await homePage.verifyHomePage.waitFor({ state: 'visible' });
         await expect(homePage.verifyHomePage).toBeVisible();
@@ -18,7 +18,7 @@ test.describe('Login to Ndosi Website', () => {
 //     test('should login with valid credentials', async ({ loginPage,homePage}) => {
 //         await loginPage.goto();
 //         await loginPage.clickLoginButton();
-//         await loginPage.login(validUsers.admin.email, validUsers.admin.password);
+//         await loginPage.login(validUsers.adminUser.email, validUsers.adminUser.password);
 //         await homePage.verifyHomePage.waitFor({ state: 'visible' });
         
 //     })

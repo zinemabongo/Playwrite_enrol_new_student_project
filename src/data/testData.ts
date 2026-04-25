@@ -6,7 +6,7 @@ export interface UserCredential {
 export const validUsers: Record<string, UserCredential> = {
   adminUser: {
     email: 'admin@gmail.com',
-    password: '@123456789'
+    password: '@12345678'
   },
 
   registeredUser: {

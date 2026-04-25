@@ -2,14 +2,14 @@ import {test as base} from '@playwright/test';
 import {LoginPage} from '../pages/loginPage';
 import {HomePage} from '../pages/homePage';
 import {AdminPage} from '../pages/adminPage';
-import { EnrolmentsPage } from '../pages/enrolmentsPage';
+import { EnrollmentsPage } from '../pages/enrollmentsPage';
 
 
 type CustomFixtures = {
     loginPage: LoginPage;
     homePage: HomePage;
     adminPage: AdminPage;
-    enrolmentsPage: EnrolmentsPage;
+    enrollmentsPage: EnrollmentsPage;
 };
 
 export const test = base.extend<CustomFixtures>({
@@ -28,8 +28,8 @@ export const test = base.extend<CustomFixtures>({
         await use(adminPage);
     },
 
-    enrolmentsPage: async ({ page }, use) => {
-        const enrolmentsPage = new EnrolmentsPage(page);
+    enrollmentsPage: async ({ page }, use) => {
+        const enrolmentsPage = new EnrollmentsPage(page);
         await use(enrolmentsPage);
     }
 
