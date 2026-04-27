@@ -30,4 +30,5 @@ test.describe('Verify user successfully enrolled', () => {
         await loginPage.clickLoginButton();
         await loginPage.login(validUsers.registeredUser.email, validUsers.registeredUser.password);
         await homePage.verifyHomePage.waitFor({ state: 'visible' });
-    
+    })
+})
