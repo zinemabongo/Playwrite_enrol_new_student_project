@@ -1,0 +1,34 @@
+import {Page,Locator} from '@playwright/test';
+import {BasePage} from './basePage';
+
+//5.Login as student and validate that you are enrolled
+
+export class UserPage extends BasePage {
+
+    // get = Locators
+    get verifyHomePage() {
+    return this.page.locator("text=Welcome back, Zine! 👋")
+    }
+
+    get clickBrowseCoursesButton() {
+        return this.page.getByRole('button', { name: 'Browse Courses' });
+    }
+
+    get verifyEnrolledCourseListed() {
+        return this.page.locator("text=API Testing with Postman – Getting Started")
+    }
+
+    // async = methods
+
+    async verifyHomePageIsVisible() {
+        await this.clickElement(this.verifyHomePage);
+    }
+
+    async clickBrowseCourses() {
+        await this.clickElement(this.clickBrowseCoursesButton);
+    }
+
+    async verifyEnrolledCourseIsListed() {
+        await this.clickElement(this.verifyEnrolledCourseListed);
+    }
+}

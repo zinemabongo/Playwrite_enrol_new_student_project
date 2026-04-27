@@ -4,6 +4,7 @@ import { get } from 'node:http';
 
 export class EnrollmentsPage extends BasePage {
     //3. Navigate to enrolments page
+
     // get = Locators
     get clickEnrollmentTab() {
         return this.page.getByRole('button',{ name: 'Enrollment' });
@@ -43,6 +44,18 @@ export class EnrollmentsPage extends BasePage {
      get verifyEnrollmentSuccessMessage() {
         return this.page.locator("text=Student enrolled successfully!")
     }   
+
+    get clickBackToWebsiteButton() {
+        return this.page.getByRole('button', { name: 'Back to Website' });
+    }
+
+    get clickProfileNameButton() {
+        return this.page.getByRole('button', { name: 'Desiree' });
+    }
+
+    get selectLogOutOption() {
+        return this.page.getByRole('button', { name: 'Logout' });
+    }
         
     // async = methods
 
@@ -85,4 +98,20 @@ export class EnrollmentsPage extends BasePage {
     async verifyEnrollmentSuccessMessageIsVisible() {
         await this.clickElement(this.verifyEnrollmentSuccessMessage);
     }
+
+    async clickBackToWebsiteMethod() {
+        await this.clickElement(this.clickBackToWebsiteButton);
+    }
+
+    async clickProfileName() {
+        await this.clickElement(this.clickProfileNameButton);
+    }
+
+    async selectLogOutOptionMethod() {
+        await this.clickElement(this.selectLogOutOption);
+    }
+
+
 }
+
+

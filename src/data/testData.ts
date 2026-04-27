@@ -15,3 +15,9 @@ export const validUsers: Record<string, UserCredential> = {
   },
 
 };
+
+//baseURL
+
+export const baseUrl: Record<string, string> = {
+  ndosiUrl: 'https://ndosisimplifiedautomation.vercel.app/'
+};

@@ -2,9 +2,10 @@ import {Page,Locator} from '@playwright/test';
 import {BasePage} from './basePage';
 import {validUsers} from '../data/testData';
 
+
 export class LoginPage extends BasePage {
-    private readonly pageUrl = 'https://ndosisimplifiedautomation.vercel.app/';
-    
+    //1. Navigate to login page
+    private readonly pageUrl: string = 'https://ndosisimplifiedautomation.vercel.app/';
 
     // get = Locators
     get navigateToLoginPage(): Locator {

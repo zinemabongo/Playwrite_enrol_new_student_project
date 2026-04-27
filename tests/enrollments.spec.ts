@@ -21,3 +21,13 @@ test.describe('Enrolment Page Tests', async () => {
         await expect(enrollmentsPage.verifyEnrollmentSuccessMessage).toBeVisible();
     })
 })
+
+
+//5.Login as student and validate that you are enrolled
+test.describe('Verify user successfully enrolled', () => {
+    test('should display success message after enrolling a student', async ({ loginPage,homePage,adminPage,enrollmentsPage }) => {
+        await loginPage.goto();
+        await loginPage.clickLoginButton();
+        await loginPage.login(validUsers.registeredUser.email, validUsers.registeredUser.password);
+        await homePage.verifyHomePage.waitFor({ state: 'visible' });
+    
