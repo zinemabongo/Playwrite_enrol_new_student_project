@@ -10,6 +10,14 @@ export class UserPage extends BasePage {
     return this.page.locator("text=Welcome back, Zine! 👋")
     }
 
+    get clickMyLearningTab() {
+        return this.page.getByRole('button', { name: 'My Learning' });
+    }
+
+    get clickMyCoursesTab() {
+        return this.page.getByRole('button', { name: 'My Courses' });
+    }
+
     get clickBrowseCoursesButton() {
         return this.page.getByRole('button', { name: 'Browse Courses' });
     }
@@ -22,6 +30,14 @@ export class UserPage extends BasePage {
 
     async verifyHomePageIsVisible() {
         await this.clickElement(this.verifyHomePage);
+    }
+
+    async clickMyLearning() {
+        await this.clickElement(this.clickMyLearningTab);
+    }
+
+    async clickMyCourses() {
+        await this.clickElement(this.clickMyCoursesTab);
     }
 
     async clickBrowseCourses() {

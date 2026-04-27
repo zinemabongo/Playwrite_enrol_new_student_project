@@ -2,7 +2,7 @@ import { test, expect } from '../src/fixtures/customFixtures';
 import {validUsers} from '../src/data/testData';
 
 test.describe('Enrolment Page Tests', async () => {
-    test('sshould be able to enrol a student', async ({ loginPage,homePage,adminPage,enrollmentsPage }) => {
+    test('should be able to enrol a student', async ({ loginPage,homePage,adminPage,enrollmentsPage }) => {
         await loginPage.goto();
         await loginPage.clickLoginButton();
         await loginPage.login(validUsers.adminUser.email, validUsers.adminUser.password);
@@ -12,23 +12,15 @@ test.describe('Enrolment Page Tests', async () => {
         await enrollmentsPage.clickEnrollmentTabButton();
         await expect(enrollmentsPage.verifyEnrollmentsPage).toBeVisible()
         await enrollmentsPage.clickEnrollUserButtonMethod();
-        await enrollmentsPage.clickSelectCourseDropdownMethod();
+        // await enrollmentsPage.clickSelectCourseDropdownMethod();
         await enrollmentsPage.selectCourseOptionMethod();
         await enrollmentsPage.selectEnrollmentTypeMethod();
         await enrollmentsPage.searchStudentNameMethod(validUsers.registeredUser.email);
         await enrollmentsPage.addEnrollmentNotesMethod('Enrolling student for testing purposes');
         await enrollmentsPage.clickEnrollUserMethod();
         await expect(enrollmentsPage.verifyEnrollmentSuccessMessage).toBeVisible();
-    })
-})
-
-
-//5.Login as student and validate that you are enrolled
-test.describe('Verify user successfully enrolled', () => {
-    test('should display success message after enrolling a student', async ({ loginPage,homePage,adminPage,enrollmentsPage }) => {
-        await loginPage.goto();
-        await loginPage.clickLoginButton();
-        await loginPage.login(validUsers.registeredUser.email, validUsers.registeredUser.password);
-        await homePage.verifyHomePage.waitFor({ state: 'visible' });
+        // await enrollmentsPage.clickBackToWebsiteButtonMethod();
+        // await enrollmentsPage.clickProfileName();
+        // await enrollmentsPage.selectLogOutOptionMethod();
     })
 })

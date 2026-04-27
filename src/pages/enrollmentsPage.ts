@@ -11,19 +11,19 @@ export class EnrollmentsPage extends BasePage {
     }
 
     get verifyEnrollmentsPage() {
-        return this.page.locator("text=Enrollment Management")
+        return this.page.locator("text= Manage Enrollments")
     }
 
     get clickEnrollUserButton() {
         return this.page.getByRole('button',{ name: '+ Enroll User' });
     }
 
-    get clickSelectCourseDropdown() {
-        return this.page.getByPlaceholder('-- Select Course --' );
-    }
+    // get clickSelectCourseDropdown() {
+    //     return this.page.getByText('-- Select Course --', { exact: true });
+    // }
 
     get selectCourseOption() {
-        return this.page.getByRole('option',{ name: 'API Testing with Postman – Getting Started' });
+        return this.page.locator('select').locator('option').nth(2);
     }
 
     get selectEnrollmentType() {
@@ -71,9 +71,9 @@ export class EnrollmentsPage extends BasePage {
         await this.clickElement(this.clickEnrollUserButton);
     }
 
-    async clickSelectCourseDropdownMethod() {
-        await this.clickElement(this.clickSelectCourseDropdown);
-    }
+    // async clickSelectCourseDropdownMethod() {
+    //     await this.clickElement(this.clickSelectCourseDropdown);
+    // }
 
     async selectCourseOptionMethod() {
         await this.clickElement(this.selectCourseOption);
@@ -99,7 +99,7 @@ export class EnrollmentsPage extends BasePage {
         await this.clickElement(this.verifyEnrollmentSuccessMessage);
     }
 
-    async clickBackToWebsiteMethod() {
+    async clickBackToWebsiteButtonMethod() {
         await this.clickElement(this.clickBackToWebsiteButton);
     }
 
