@@ -12,10 +12,11 @@ test.describe('Enrolment Page Tests', async () => {
         await enrollmentsPage.clickEnrollmentTabButton();
         await expect(enrollmentsPage.verifyEnrollmentsPage).toBeVisible()
         await enrollmentsPage.clickEnrollUserButtonMethod();
-        // await enrollmentsPage.clickSelectCourseDropdownMethod();
+        await enrollmentsPage.clickSelectCourseDropdownMethod();
         await enrollmentsPage.selectCourseOptionMethod();
-        await enrollmentsPage.selectEnrollmentTypeMethod();
+        await enrollmentsPage.selectEnrollmentTypeMethod(); 
         await enrollmentsPage.searchStudentNameMethod(validUsers.registeredUser.email);
+        await enrollmentsPage.selectStudentFromSearchResultsMethod();
         await enrollmentsPage.addEnrollmentNotesMethod('Enrolling student for testing purposes');
         await enrollmentsPage.clickEnrollUserMethod();
         await expect(enrollmentsPage.verifyEnrollmentSuccessMessage).toBeVisible();

@@ -18,12 +18,12 @@ export class UserPage extends BasePage {
         return this.page.getByRole('button', { name: 'My Courses' });
     }
 
-    get clickBrowseCoursesButton() {
-        return this.page.getByRole('button', { name: 'Browse Courses' });
-    }
+    // get clickBrowseCoursesButton() {
+    //     return this.page.getByRole('button', { name: 'Browse Courses' });
+    // }
 
     get verifyEnrolledCourseListed() {
-        return this.page.locator("text=API Testing with Postman – Getting Started")
+        return this.page.getByRole('heading', { name: 'API Testing with Postman – Getting Started' });
     }
 
     // async = methods
@@ -40,11 +40,11 @@ export class UserPage extends BasePage {
         await this.clickElement(this.clickMyCoursesTab);
     }
 
-    async clickBrowseCourses() {
-        await this.clickElement(this.clickBrowseCoursesButton);
-    }
+    // async clickBrowseCourses() {
+    //     await this.clickElement(this.clickBrowseCoursesButton);
+    // }
 
-    async verifyEnrolledCourseIsListed() {
-        await this.clickElement(this.verifyEnrolledCourseListed);
+    async verifyEnrolledCourseIsListedMethod() {
+        await this.verifyElementVisible(this.verifyEnrolledCourseListed);
     }
 }

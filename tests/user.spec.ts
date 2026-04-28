@@ -7,9 +7,11 @@ customTest.describe('User Tests', () => {
         await loginPage.goto();
         await loginPage.clickLoginButton();
         await loginPage.login(validUsers.registeredUser.email, validUsers.registeredUser.password);
-        await homePage.verifyHomePage.waitFor({ state: 'visible' });
-        await userPage.clickBrowseCourses();
-        await userPage.verifyEnrolledCourseIsListed();
+        await loginPage.clickLoginButton();
+        await userPage.verifyHomePage.waitFor({ state: 'visible' });
+        await userPage.clickMyLearning();
+        await userPage.clickMyCourses();
+        //await userPage.verifyEnrolledCourseIsListed();
         await expect(userPage.verifyEnrolledCourseListed).toBeVisible();
     })
 })

@@ -35,4 +35,9 @@ export class BasePage {
         await expect(locator).toBeVisible();
     }
 
+    async selectDropdownOption (locator: Locator) {
+        console.log(`Select an element: ${locator}`);
+        await locator.click();
+    }
+
 }
